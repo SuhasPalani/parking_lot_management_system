@@ -1,1 +1,2 @@
-# parking_lot_management_system
+pip install mysql-connector-python
+pip install Flask
