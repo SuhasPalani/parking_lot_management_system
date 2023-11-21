@@ -1,0 +1,63 @@
+<div class="container">
+  <br />
+  <br />
+  <div style="text-align: center; color: #007bff">
+    <h3>Exit a Vehicle</h3>
+  </div>
+  <br />
+    <table class="table">
+      <thead>
+          <tr>
+          <th scope="col">Log ID</th>
+          <th scope="col">Vehicle ID</th>
+          <th scope="col">Spot ID</th>
+          <th scope="col">Checkin Time</th>
+          <th scope="col">Res ID</th>
+          </tr>
+      </thead>
+      <tbody id="logListId">
+      </tbody>
+    </table>
+    <div id="formContainer" style="display: none;">
+      <form id="form3" >
+        <div class="row">
+          <div class="col-3">
+            <label for="logId">Payment for</label>
+            <input type="number" class="form-control" id="logId" disabled required/>
+          </div>
+          <div class="col-3">
+            <label for="duration">Duration</label>
+            <input type="text" class="form-control" id="duration" disabled required/>
+          </div>
+          <div class="col-3">
+            <label for="pmtMode">Payment method</label>
+            <select class="form-select" id="pmtMode" required>
+              <option selected>Select a payment method</option>
+              <option value="cash">cash</option>
+              <option value="credit">credit</option>
+              <option value="debit">debit</option>
+              <option value="google pay">google pay</option>
+              <option value="apple pay">apple pay</option>
+            </select>
+          </div>
+          <div class="col-3">
+            <label for="pmtAmt">Payment amount</label>
+            <input type="number" class="form-control" id="pmtAmt" disabled required/>
+          </div>
+        </div>
+        <br />
+        <button
+          type="submit"
+          class="btn btn-primary"
+          style="margin: 0 auto; display: block"
+        >
+          Make a payment
+        </button>
+      </form>
+    </div>
+  </div>
+  
+  {% block script %}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src={{ url_for('static', filename='exitVehicleUI.js')}}></script>
+    {% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% with type= type %}
+    {% include "navbar.html" %}
+{% endwith %}
+
+{% block content %}
+<div class="container pt-5 pl-2">
+    <h1 class="f-6">Parking lot Information</h1>
+    <form id="form">
+        <div class="row">
+            <div class="col">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Lot Name">
+            </div>
+            <div class="col">
+                <label for="location">Location</label>
+                <input type="text" class="form-control" id="location" placeholder="Lot Address">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="totalSpots">Total Spots</label>
+                <input type="number" class="form-control" id="totalSpots">
+            </div>
+            <div class="col">
+                <label for="availableSpots">Available Spots</label>
+                <input type="number" class="form-control" id="availableSpots">
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
+
+
+{% block script %}
+<script src={{ url_for('lot.static', filename='js/lotFormUI.js') }}></script>
+{% endblock %}

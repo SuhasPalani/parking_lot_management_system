@@ -1,0 +1,46 @@
+<div class="container">
+  <br />
+  <br />
+  <div style="text-align: center; color: #007bff">
+    <h3>Park a Vehicle</h3>
+  </div>
+  <br />
+  <form id="form2">
+    <div class="row">
+        <div class="col-3">
+          <label for="startTime">Vehicle</label>
+          <select class="form-select" id="vehicleId" required>
+          </select>
+        </div>
+      <div class="col-4">
+        <label for="startTime">Parking lot</label>
+        <input
+          class="form-control"
+          id="parkingLot"
+          type="text"
+          placeholder="Search by Location, Zipcode, or Lot Name"
+          required
+        />
+        <ul class="dropdown-menu" id="lotListId2"></ul>
+      </div>
+      <div class="col-3">
+        <label for="startTime">Parking spot</label>
+        <select class="form-select" id="spotId" required>
+        </select>
+      </div>
+    </div>
+    <br />
+    <button
+      type="submit"
+      class="btn btn-primary"
+      style="margin: 0 auto; display: block"
+    >
+      Park a vehicle
+    </button>
+  </form>
+</div>
+
+{% block script %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src={{ url_for('static', filename='parkVehicleUI.js')}}></script>
+  {% endblock %}

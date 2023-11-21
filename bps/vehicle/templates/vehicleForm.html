@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% with type=type %}
+{% include "navbar.html" %}
+{% endwith %}
+
+{% block content %}
+<div class="container pt-5 pl-2">
+    <h1 class="f-6">User Vehicle Information</h1>
+    <form id="form">
+        <div class="row">
+            <div class="col-4">
+                <label for="name">Plate Number</label>
+                <input type="text" class="form-control" id="plateNumber" placeholder="plateNumber">
+            </div>
+            <div class="col-4">
+                <label for="location">Vehicle Type</label>
+                <select class="form-select" id="type" required>
+                    <option selected>Select a vehicle type</option>
+                    <option value="sedan">sedan</option>
+                    <option value="Truck">Truck</option>
+                    <option value="suv">suv</option>
+                    <option value="Van">Van</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
+
+
+{% block script %}
+<script src={{ url_for('vehicle.static', filename='js/vehicleFormUI.js') }}></script>
+{% endblock %}
